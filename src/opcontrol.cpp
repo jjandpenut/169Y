@@ -35,4 +35,7 @@ void handle_wings(bool &WingState){
     Wing_Piston.set_value(WingState);
 
 }
-void handle_intake(bool &IntakeState);
+void handle_intake(bool &IntakeState){
+    if (controller.get_digital(Intake_Forward))
+        IntakeState = 1;
+}
